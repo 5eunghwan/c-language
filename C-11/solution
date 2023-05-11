@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int solution(int price, char* grade) {
+  int answer = 0;
+  if (grade == "S")  
+  {  
+    answer = price * 0.95;
+ }
+  if (grade == "G")
+  {
+    answer = price * 0.9;
+  }
+  if (grade == "V")
+  {
+    answer = price * 0.85;
+  }
+
+  return answer;
+}
+
+int main(void) {
+  int price1 = 2500;
+  char* grade1 ="G";
+  int ret1 = solution(price1,grade1);
+  printf("결과값 : %d",ret1);
+  return 0;
+}
