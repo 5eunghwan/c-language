@@ -1,0 +1,35 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+int coin_toss(void);
+
+int main(void)
+{
+    int toss; // 동전을 던진 횟수
+    int heads = 0; // 동전의 앞면
+    int tails = 0; // 동전의 뒷면
+    srand((unsigned)time(NULL));
+
+    // 100번 반복하여 동전의 앞면 , 뒷면이 몇회 나오는지 확인하는 반복문
+    for (toss =0; toss <100; toss++) {
+        if (coin_toss() == 1)
+            heads++;
+        else 
+            tails++;
+
+    }
+
+    printf("동전의 앞면: %d \n",heads);
+    printf("동전의 뒷면: %d \n",tails);
+    return 0;
+}
+
+// 0또는 1이 랜덤하게 나오는 함수
+int coin_toss (void)
+{
+    int head = rand() % 2;
+    return head;
+}
+
+
