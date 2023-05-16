@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <time.h>
+
+int main (void)
+{
+    time_t start, end;
+    start = time(NULL); // 시작시간
+    printf("10초가 되면 아무 키나 누르세요\n");
+    while (1)  {
+        // 아무 키나 누르면 멈추게 하는 조건문 
+        if(getchar())
+            break;
+}
+printf("종료되었습니다. \n");
+end = time(NULL); // 종료시간
+printf("경과된 시간은 %ld 초입니다. \n",end - start); // 종료시간 과 시작시간을 빼서 경과된 시간을 구함
+return 0;
+ 
+}
